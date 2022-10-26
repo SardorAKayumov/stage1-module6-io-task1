@@ -7,7 +7,6 @@ import java.util.*;
 
 
 public class FileReader {
-
     public Profile getDataFromFile(File file) {
         try (FileInputStream in = new FileInputStream(file.getPath())) {
             //Read data from the file
@@ -41,7 +40,7 @@ public class FileReader {
             return new Profile(name, age, email, phone);
 
         } catch (IOException ex) {
-            System.err.println(ex);
+            ex.printStackTrace();
         }
 
         return new Profile();
